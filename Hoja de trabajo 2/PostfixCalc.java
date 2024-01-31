@@ -14,13 +14,10 @@
  *  
 */
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class PostfixCalc {
 	
-    public static void main(String[] args) throws FileNotFoundException {
+    
+	/*public static void main(String[] args) throws FileNotFoundException {
     	
     	
     	File file = new File("data.txt");
@@ -34,21 +31,20 @@ public class PostfixCalc {
     	
     	lector.close();
     	
-        // String expression = "4 5 3 + -"; // Ejemplo de expresión Postfix
-
+        
     	int result = evaluarExpresion(expression);
     	
     	System.out.println("Resultado: " + result);
     	
     }
+    */
     
-    
-    private static int evaluarExpresion(String expression){
+    static int evaluarExpresion(String expression){
 
-    	Pila stack = new Pila();
+    	InterfazUVGStack stack = new Pila();
     	 for (String token : expression.split(" ")) {
              if (isNumeric(token)) {
-                 stack.push(Integer.parseInt(token));
+                 stack.push(Integer.parseInt(token)); //
              } else {
                  int a = stack.top();
                  stack.pop();

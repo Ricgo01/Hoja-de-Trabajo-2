@@ -9,7 +9,7 @@
  * @author Vianka Castro 23201
  * 		   Ricardo Godinez 23247
  *  
- * Clase pila qu e
+ * Clase pila que posee todos los metodos necesarios para calcular el valor 
  *  
 */
 

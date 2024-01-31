@@ -15,33 +15,10 @@
 */
 
 public class PostfixCalc {
-	
-    
-	/*public static void main(String[] args) throws FileNotFoundException {
-    	
-    	
-    	File file = new File("data.txt");
-    	Scanner lector = new Scanner(file);
-    	
-    	String expression = " ";
-    	
-    	while (lector.hasNextLine()) {
-    		expression += lector.nextLine();
-    	}
-    	
-    	lector.close();
-    	
-        
-    	int result = evaluarExpresion(expression);
-    	
-    	System.out.println("Resultado: " + result);
-    	
-    }
-    */
     
     static int evaluarExpresion(String expression){
 
-    	InterfazUVGStack stack = new Pila();
+    	UVGStack stack = new Pila();
     	 for (String token : expression.split(" ")) {
              if (isNumeric(token)) {
                  stack.push(Integer.parseInt(token)); //

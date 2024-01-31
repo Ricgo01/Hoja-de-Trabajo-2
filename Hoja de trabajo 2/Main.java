@@ -40,7 +40,6 @@ public class Main {
 
     	File file = new File("data.txt");
     	Scanner lector = new Scanner(file);
-    	PostfixCalc calc = new PostfixCalc();
     	
     	
     	String expression = " ";
@@ -52,7 +51,7 @@ public class Main {
     	lector.close();
     	
         
-    	int result = calc.evaluarExpresion(expression);
+    	int result = PostfixCalc.evaluarExpresion(expression);
     	
     	System.out.println("Resultado: " + result);
 

@@ -15,7 +15,7 @@
 */
 
 
-public interface InterfazUVGStack {
+public interface UVGStack {
 
 	
 	boolean isEmpty();

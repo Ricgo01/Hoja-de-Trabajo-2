@@ -15,7 +15,7 @@
 
 import java.util.Vector;
 
-public class Pila implements InterfazUVGStack {
+public class Pila implements UVGStack {
 	
     private Vector<Integer> numeros = new Vector<>();
 

@@ -15,38 +15,31 @@
 
 import java.util.Vector;
 
-public class Pila implements InterfazUVGStack  {
-	
-	
-	
-	private Vector<Integer> numeros;
-	
+public class Pila implements InterfazUVGStack {
+    private Vector<Integer> numeros = new Vector<>();
 
-	@Override
-	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
-	}
+    @Override
+    public boolean isEmpty() {
+        return numeros.isEmpty();
+    }
 
-	@Override
-	public void pop() {
-		// TODO Auto-generated method stub
-		
-	}
+    @Override
+    public void pop() {
+        if (!isEmpty()) {
+            numeros.remove(numeros.size() - 1);
+        }
+    }
 
-	@Override
-	public void push(int element) {
-		// TODO Auto-generated method stub
-		
-	}
+    @Override
+    public void push(int element) {
+        numeros.add(element);
+    }
 
-	@Override
-	public void top() {
-		// TODO Auto-generated method stub
-	}
-	
-
-	
-	
-	
+    @Override
+    public int top() {
+        if (!isEmpty()) {
+            return numeros.get(numeros.size() - 1);
+        }
+        return -1; // Retornar un valor predeterminado cuando la pila está vacía
+    }
 }

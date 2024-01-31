@@ -14,16 +14,45 @@
  *  
 */
 
-public class PostfixCalc{
-	
-	private int resultado;
-	
-	public static void main(String[] args){
-		
-		
-		
-		
-		
-	}
-	
+public class PostfixCalc {
+    public static void main(String[] args) {
+        String expression = "4 5 3 + -"; // Ejemplo de expresión Postfix
+        Pila stack = new Pila();
+
+        for (String token : expression.split(" ")) {
+            if (isNumeric(token)) {
+                stack.push(Integer.parseInt(token));
+            } else {
+                int a = stack.top();
+                stack.pop();
+                int b = stack.top();
+                stack.pop();
+                switch (token) {
+                    case "+":
+                        stack.push(b + a);
+                        break;
+                    case "-":
+                        stack.push(b - a);
+                        break;
+                    case "*":
+						stack.push(b * a);
+						break;
+					case "/":
+						stack.push(b / a);
+						break;
+                }
+            }
+        }
+
+        System.out.println("Resultado: " + stack.top());
+    }
+
+    private static boolean isNumeric(String str) {
+        try {
+            Integer.parseInt(str);
+            return true;
+        } catch (NumberFormatException e) {
+            return false;
+        }
+    }
 }

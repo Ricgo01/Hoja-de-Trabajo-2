@@ -24,7 +24,7 @@ public interface InterfazUVGStack {
 	
 	void push(int element);
 	
-	void top();
+	int top();
 	
 	
 	

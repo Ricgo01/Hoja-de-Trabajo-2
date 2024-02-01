@@ -52,7 +52,7 @@ public class PostfixCalc {
 
        
 
-    private static boolean isNumeric(String str) {
+    static boolean isNumeric(String str) {
         try {
             Integer.parseInt(str);
             return true;

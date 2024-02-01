@@ -28,7 +28,11 @@ public class Pila implements UVGStack {
     public void pop() {
         if (!isEmpty()) {
             numeros.remove(numeros.size() - 1);
+        } 
+        else {
+            throw new IndexOutOfBoundsException("La pila esta vacia");
         }
+        
     }
 
     @Override

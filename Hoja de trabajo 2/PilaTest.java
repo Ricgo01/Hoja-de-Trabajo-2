@@ -58,7 +58,7 @@ class PostfixCalcTest {
         // producto  
         String expression2 = "2 6 *";
         int result2 = PostfixCalc.evaluarExpresion(expression2);
-        assertEquals(20, result2);
+        assertEquals(12, result2);
 
         // division
         String expression3 = "10 2 /";
@@ -68,7 +68,7 @@ class PostfixCalcTest {
         // completa
         String expression4 = "3 2 + 8 * 6 -";
         int result4 = PostfixCalc.evaluarExpresion(expression4);
-        assertEquals(17, result4);
+        assertEquals(34, result4);
 
         //division por 0 
         String expression5 = "5 0 /";

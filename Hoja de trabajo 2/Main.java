@@ -33,20 +33,24 @@ public class Main {
      */
 
 	 public static void main(String[] args) throws FileNotFoundException {
+		// Crear un objeto File para el archivo "data.txt"
 		File file = new File("data.txt");
+		// Crear un objeto Scanner para leer el archivo
 		Scanner lector = new Scanner(file);
 		StringBuilder expression = new StringBuilder();
-		
+		// Leer cada línea del archivo y concatenar en la variable expression
 		while (lector.hasNextLine()) {
 			expression.append(lector.nextLine()).append(" ");
 		}
-		
+		// Cerrar el objeto Scanner
 		lector.close();
 		
 		try {
+			// Evaluar la expresión postfija y mostrar el resultado
 			int result = PostfixCalc.evaluarExpresion(expression.toString().trim());
 			System.out.println("Resultado: " + result);
 		} catch (IllegalArgumentException | ArithmeticException e) {
+			// Manejar excepciones relacionadas con la evaluación de la expresión
 			System.err.println("Error al evaluar la expresión: " + e.getMessage());
 		}
 	}

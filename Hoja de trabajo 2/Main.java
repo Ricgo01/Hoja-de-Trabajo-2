@@ -32,28 +32,22 @@ public class Main {
      * @throws FileNotFoundException Si el archivo especificado no se encuentra.
      */
 
-	public static void main(String[] args) throws FileNotFoundException {
-	
-		 // Creación de un objeto File para representar el archivo de datos.
-    	File file = new File("data.txt");
-		// Creación de un objeto Scanner para leer el archivo.
-    	Scanner lector = new Scanner(file);
-    	
-    	// Inicialización de la variable para almacenar la expresión leída.
-    	String expression = " ";
-    	
-		// Lectura de cada línea del archivo y concatenación en la variable expression.
-    	while (lector.hasNextLine()) {
-    		expression += lector.nextLine();
-    	}
-    	// Cierre del objeto Scanner.
-    	lector.close();
-    	
-        // Evaluación de la expresión usando un método estático de la clase PostfixCalc.
-    	int result = PostfixCalc.evaluarExpresion(expression);
-    	// Impresión del resultado en la consola.
-    	System.out.println("Resultado: " + result);
-
+	 public static void main(String[] args) throws FileNotFoundException {
+		File file = new File("data.txt");
+		Scanner lector = new Scanner(file);
+		StringBuilder expression = new StringBuilder();
+		
+		while (lector.hasNextLine()) {
+			expression.append(lector.nextLine()).append(" ");
+		}
+		
+		lector.close();
+		
+		try {
+			int result = PostfixCalc.evaluarExpresion(expression.toString().trim());
+			System.out.println("Resultado: " + result);
+		} catch (IllegalArgumentException | ArithmeticException e) {
+			System.err.println("Error al evaluar la expresión: " + e.getMessage());
+		}
 	}
-
 }
